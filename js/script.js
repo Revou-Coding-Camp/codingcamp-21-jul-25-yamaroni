@@ -16,7 +16,8 @@ function addTask() {
         // Add the task to the tasks array
         tasks.push({
             title: taskInput.value,
-            date: dateInput.value
+            date: dateInput.value,
+            completed: false,
         });
 
         console.log("Task added:", taskInput.value, "on", dateInput.value);
@@ -38,6 +39,11 @@ function toggleFilter() {
     // Function to toggle the filter
 }
 
+function completeTask(index) {
+    // Function to mark a task as completed
+    tasks[index].completed = true;
+}
+
 function renderTasks() {
     // Function to render tasks on the page
     const taskList = document.getElementById("todo-list");
@@ -48,7 +54,7 @@ function renderTasks() {
         <li class="todo-item flex justify-between items-center bg-white p-4 mb-2">
                     <span>${task.title}</span>
                     <div>
-                        <button class="px-[10px] py-[2px] bg-green-500 text-white rounded-md">Edit</button>
+                        <button type="button" class="px-[10px] py-[2px] bg-green-500 text-white rounded-md" onclick="completeTask(${index});">Complete</button>
                         <button class="px-[10px] py-[2px] bg-red-500 text-white rounded-md">Delete</button>
                     </div>
                 </li>
