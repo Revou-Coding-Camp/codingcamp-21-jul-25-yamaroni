@@ -1,5 +1,3 @@
-console.log("Hello, World!");
-
 // This is a simple JavaScript file for a Todo List application
 let tasks = [];
 
@@ -19,9 +17,6 @@ function addTask() {
             date: dateInput.value,
             completed: false,
         });
-
-        console.log("Task added:", taskInput.value, "on", dateInput.value);
-        console.log(tasks);
 
         renderTasks();
     }
